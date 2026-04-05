@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>艶ほっぺなおみ | 顔ヨガ・エステ継続レッスン</title>
+  <title>艶ほっぺ 美顔ヨガ | 角谷直美</title>
   <meta name="description" content="50代60代からでも変われる。美顔ヨガ×エステ×メンタルケアで、3ヶ月後に見違える艶ほっぺへ。神戸・オンライン対応。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +22,13 @@
 
     /* ── Header ── */
     header {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.97);
       backdrop-filter: blur(10px);
-      box-shadow: 0 1px 6px rgba(0,0,0,0.03);
-      position: sticky;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
     }
 
@@ -47,17 +49,86 @@
       letter-spacing: 2px;
     }
 
-    nav ul { display: flex; list-style: none; gap: 28px; }
+    /* ── Hamburger ── */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 1100;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: #888;
+      border-radius: 1px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); background: #c4788a; }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); background: #c4788a; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 260px;
+      height: 100vh;
+      background: #fff;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(100%);
+      transition: transform 0.35s ease;
+      z-index: 1050;
+    }
+
+    nav.open { transform: translateX(0); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
 
     nav a {
+      display: block;
       text-decoration: none;
-      color: #888;
-      font-size: 12px;
+      color: #666;
+      font-size: 15px;
+      font-weight: 400;
       letter-spacing: 0.5px;
+      padding: 10px 20px;
       transition: color 0.3s;
     }
 
     nav a:hover { color: #c4788a; }
+
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+      z-index: 1040;
+    }
+
+    .nav-overlay.open { display: block; }
+
+    /* ヘッダーの高さ分、最初のセクションを下げる */
+    body > section:first-of-type,
+    .hero { margin-top: 60px; }
 
     /* ── Hero ── */
     .hero {
@@ -105,7 +176,7 @@
 
     .hero-text .lead {
       color: #888;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 2.2;
       font-weight: 300;
       margin-bottom: 36px;
@@ -193,7 +264,7 @@
 
     .empathy-card .card-text {
       padding: 16px 20px 16px 0;
-      font-size: 15px;
+      font-size: 16px;
       color: #666;
       font-weight: 300;
       line-height: 1.8;
@@ -338,7 +409,7 @@
     }
 
     .approach-detail p {
-      font-size: 14px;
+      font-size: 15px;
       color: #888;
       line-height: 2;
       font-weight: 300;
@@ -514,7 +585,7 @@
 
     .instructor-bio p {
       color: #777;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 2.1;
       font-weight: 300;
       margin-bottom: 14px;
@@ -560,7 +631,7 @@
     }
 
     .voice-item .voice-text {
-      font-size: 15px;
+      font-size: 16px;
       color: #666;
       line-height: 2;
       font-weight: 300;
@@ -678,7 +749,7 @@
 
     .faq-answer-inner {
       padding: 0 0 24px 28px;
-      font-size: 14px;
+      font-size: 15px;
       color: #777;
       line-height: 2.1;
       font-weight: 300;
@@ -776,8 +847,6 @@
     /* ── Responsive ── */
     @media (max-width: 768px) {
       .header-main { padding: 14px 20px; }
-      nav ul { gap: 16px; }
-      nav a { font-size: 11px; }
 
       .hero {
         grid-template-columns: 1fr;
@@ -898,22 +967,31 @@
 
 <body>
 
+  <!-- Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
   <!-- Header -->
   <header>
     <div class="header-main">
-      <div class="logo">艶ほっぺなおみ</div>
-      <nav>
-        <ul>
-          <li><a href="#about">想い</a></li>
-          <li><a href="#course">コース</a></li>
-          <li><a href="#instructor">講師</a></li>
-          <li><a href="#voice">お客様の声</a></li>
-          <li><a href="#faq">よくある質問</a></li>
-          <li><a href="#cta">体験レッスン</a></li>
-        </ul>
-      </nav>
+      <div class="logo">艶ほっぺ 美顔ヨガ</div>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <nav id="nav">
+    <ul>
+      <li><a href="#about">想い</a></li>
+      <li><a href="#course">コース</a></li>
+      <li><a href="#instructor">講師</a></li>
+      <li><a href="#voice">お客様の声</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+      <li><a href="#cta">体験レッスン</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero -->
   <section class="hero">
@@ -1208,6 +1286,29 @@
       </div>
     </div>
   </section>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    var hamburger = document.getElementById('hamburger');
+    var nav = document.getElementById('nav');
+    var overlay = document.getElementById('navOverlay');
+
+    function toggleMenu(open) {
+      hamburger.classList.toggle('open', open);
+      nav.classList.toggle('open', open);
+      overlay.classList.toggle('open', open);
+    }
+
+    hamburger.addEventListener('click', function() {
+      toggleMenu(!nav.classList.contains('open'));
+    });
+
+    overlay.addEventListener('click', function() { toggleMenu(false); });
+
+    nav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { toggleMenu(false); });
+    });
+  </script>
 
   <!-- FAQ Accordion Script -->
   <script>
