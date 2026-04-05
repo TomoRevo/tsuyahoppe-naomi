@@ -224,3 +224,24 @@
 **OK（デザインチェック合格）** -- 条件なし。デプロイ可能な状態
 
 - **ステータス**: 完了
+
+---
+
+## 2026-04-05 [CTO] → index.html 軽量アニメーション追加
+
+### 17. スクロールアニメーション・ヒーローテキストアニメーション実装
+
+- **指摘**: CEO指示。ページにワクワクする軽いアニメーションを追加。上品で癒しのトーンに合う動きに
+- **対応**:
+  - **CSSアニメーション定義** (6種):
+    1. `.fade-in` — スクロールフェードイン（opacity 0→1 + translateY 20px→0、0.8s ease-out）
+    2. `.slide-left` — 左からスライドイン（BA写真用、translateX -30px→0）
+    3. `.hero-stagger` — ページ読み込み時にh1→lead→CTAが0.3秒間隔で順次表示
+    4. `.label-bounce` — Dancing Scriptラベルがscale 0.92→1で微バウンス（cubic-bezier overshoot）
+    5. `.gentle-pulse` @keyframes — CTAボタンの控えめなパルス（box-shadow 3s infinite）
+    6. `.trinity-fade` — 三位一体ラベルが美顔ヨガ→メンタル→エステの順で0.15s刻みで出現
+  - **JavaScript（IntersectionObserver）**: threshold 0.15 / rootMargin -40px。要素が画面に15%入ったら`.visible`を付与し、一度表示したら監視解除（パフォーマンス配慮）
+  - **アクセシビリティ**: `@media (prefers-reduced-motion: reduce)` でアニメーション全無効化。opacity/transform即座に1/none、keyframesもnone
+  - **パフォーマンス**: transform + opacity のみ使用（layoutプロパティ不使用）。外部ライブラリなし
+  - **適用箇所**: ヒーローテキスト3要素、全セクションラベル(Worries/My Story/Approach/Course/Instructor/Voice/Questions/Trial Lesson)、thin-line、h2見出し、共感カード5枚、ターンテキスト、直美BA写真、statement blockquote、アプローチ3項目、コース情報・価格、講師写真、お客様の声3件+BA写真3枚、FAQ見出し、CTAテキスト+ボタン、三位一体ラベル3要素
+- **ステータス**: 反映済み
