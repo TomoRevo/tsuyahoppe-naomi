@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>艶ほっぺ 美顔ヨガ | 角谷直美</title>
-  <meta name="description" content="50代60代からでも変われる。美顔ヨガ×エステ×メンタルケアで、3ヶ月後に見違える艶ほっぺへ。神戸・オンライン対応。" />
+  <meta name="description" content="50代60代からでも変われる。美顔ヨガ×メンタルケア×エステで、3ヶ月後に見違える艶ほっぺへ。神戸・オンライン対応。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -44,7 +44,7 @@
     .logo {
       font-family: 'Noto Serif JP', serif;
       font-size: 18px;
-      font-weight: 400;
+      font-weight: 500;
       color: #c4788a;
       letter-spacing: 2px;
     }
@@ -81,11 +81,14 @@
       position: fixed;
       top: 0;
       right: 0;
-      width: 260px;
+      width: 300px;
       height: 100vh;
-      background: #fff;
-      box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: -4px 0 30px rgba(0,0,0,0.12);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       transform: translateX(100%);
@@ -99,28 +102,49 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
       text-align: center;
+      width: 100%;
+      padding: 0 24px;
     }
 
     nav a {
       display: block;
       text-decoration: none;
-      color: #666;
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      padding: 10px 20px;
-      transition: color 0.3s;
+      color: #555;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 16px 24px;
+      transition: all 0.3s;
+      border-radius: 6px;
     }
 
-    nav a:hover { color: #c4788a; }
+    nav a:hover {
+      color: #c4788a;
+      background: rgba(196,120,138,0.08);
+    }
+
+    nav::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e0c0cc, transparent);
+      opacity: 0;
+      transition: opacity 0.4s 0.2s;
+    }
+
+    nav.open::before { opacity: 1; }
 
     .nav-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(2px);
       z-index: 1040;
     }
 
@@ -162,7 +186,7 @@
     .hero-text h1 {
       font-family: 'Noto Serif JP', serif;
       font-size: 34px;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.8;
       color: #333;
       margin-bottom: 24px;
@@ -178,7 +202,7 @@
       color: #888;
       font-size: 16px;
       line-height: 2.2;
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 36px;
     }
 
@@ -189,7 +213,7 @@
       background: #c4788a;
       color: #fff;
       font-size: 13px;
-      font-weight: 400;
+      font-weight: 500;
       border-radius: 4px;
       letter-spacing: 1px;
       text-decoration: none;
@@ -211,10 +235,10 @@
 
     .label {
       font-family: 'Dancing Script', cursive;
-      font-size: 16px;
+      font-size: 44px;
       color: #c4788a;
       letter-spacing: 1px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       text-align: center;
     }
 
@@ -229,7 +253,7 @@
     .empathy h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: 22px;
-      font-weight: 300;
+      font-weight: 500;
       color: #444;
       line-height: 2;
       margin-bottom: 50px;
@@ -266,14 +290,14 @@
       padding: 16px 20px 16px 0;
       font-size: 16px;
       color: #666;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.8;
     }
 
     .empathy .turn {
       font-family: 'Noto Serif JP', serif;
       font-size: 18px;
-      font-weight: 400;
+      font-weight: 500;
       color: #c4788a;
       line-height: 2;
       text-align: center;
@@ -295,7 +319,7 @@
     .statement blockquote {
       font-family: 'Noto Serif JP', serif;
       font-size: 32px;
-      font-weight: 400;
+      font-weight: 500;
       color: #333;
       line-height: 1.8;
       max-width: 600px;
@@ -309,7 +333,7 @@
       margin-top: 20px;
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 13px;
-      font-weight: 300;
+      font-weight: 400;
       color: #a08090;
     }
 
@@ -324,7 +348,7 @@
     .approach h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 500;
       color: #444;
       margin-bottom: 50px;
     }
@@ -412,7 +436,7 @@
       font-size: 15px;
       color: #888;
       line-height: 2;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ── Course (centered layout) ── */
@@ -430,7 +454,7 @@
     .course h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: 22px;
-      font-weight: 400;
+      font-weight: 500;
       color: #444;
       margin-bottom: 40px;
     }
@@ -463,7 +487,7 @@
     .course-row .row-value {
       font-size: 14px;
       color: #555;
-      font-weight: 300;
+      font-weight: 400;
       text-align: left;
       flex: 1;
       max-width: 400px;
@@ -493,7 +517,7 @@
 
     .price-box .current small {
       font-size: 14px;
-      font-weight: 300;
+      font-weight: 400;
       color: #999;
     }
 
@@ -510,7 +534,7 @@
       background: #c4788a;
       color: #fff;
       font-size: 13px;
-      font-weight: 400;
+      font-weight: 500;
       border-radius: 4px;
       letter-spacing: 1px;
       text-decoration: none;
@@ -534,7 +558,7 @@
     .instructor h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: 22px;
-      font-weight: 400;
+      font-weight: 500;
       color: #444;
       margin-bottom: 40px;
     }
@@ -587,7 +611,7 @@
       color: #777;
       font-size: 16px;
       line-height: 2.1;
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 14px;
     }
 
@@ -611,7 +635,7 @@
     .voices h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 500;
       color: #444;
       margin-bottom: 50px;
     }
@@ -634,7 +658,7 @@
       font-size: 16px;
       color: #666;
       line-height: 2;
-      font-weight: 300;
+      font-weight: 400;
       text-align: center;
     }
 
@@ -660,7 +684,7 @@
     .faq h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: 22px;
-      font-weight: 400;
+      font-weight: 500;
       color: #444;
       margin-bottom: 50px;
     }
@@ -685,7 +709,7 @@
       text-align: left;
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 15px;
-      font-weight: 400;
+      font-weight: 500;
       color: #555;
       line-height: 1.8;
       gap: 16px;
@@ -752,7 +776,7 @@
       font-size: 15px;
       color: #777;
       line-height: 2.1;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ── CTA ── */
@@ -766,13 +790,13 @@
     .cta h2 {
       font-family: 'Noto Serif JP', serif;
       font-size: 24px;
-      font-weight: 400;
+      font-weight: 500;
       margin-bottom: 12px;
     }
 
     .cta p {
       font-size: 14px;
-      font-weight: 300;
+      font-weight: 400;
       opacity: 0.85;
       margin-bottom: 30px;
       line-height: 2;
@@ -815,7 +839,7 @@
       border-radius: 4px;
       text-decoration: none;
       font-size: 13px;
-      font-weight: 400;
+      font-weight: 500;
       box-shadow: 0 2px 12px rgba(6,199,85,0.3);
       transition: all 0.3s;
     }
@@ -853,7 +877,7 @@
         min-height: auto;
       }
 
-      .hero-image { height: 50vh; }
+      .hero-image { height: 75vh; }
 
       .hero-text {
         padding: 40px 28px;
@@ -996,16 +1020,16 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-image">
-      <img src="img/naomi_pfoto_fixed.png" alt="角谷直美" style="width:100%;height:100%;object-fit:cover;">
+      <img src="img/naomi_pfoto_fixed.png" alt="角谷直美" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
     </div>
     <div class="hero-text">
       <h1>あなたは<br>まだまだ<em>可愛く</em>なれる。</h1>
       <p class="lead">
-        美顔ヨガ × エステ × メンタルケア。<br>
+        美顔ヨガ × メンタルケア × エステ。<br>
         お顔と心と体、すべてを整える3ヶ月間。<br>
         鏡を見るたびに、自分を好きになれる毎日へ。
       </p>
-      <a href="#cta" class="hero-cta">無料体験レッスンに申し込む</a>
+      <a href="#cta" class="hero-cta">体験レッスンに申し込む</a>
     </div>
   </section>
 
@@ -1049,6 +1073,7 @@
     <div style="max-width:500px;margin:0 auto;text-align:center;">
       <p class="label">My Story</p>
       <div class="thin-line"></div>
+      <h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:500;color:#444;margin-bottom:30px;">私の変化</h2>
       <img src="img/naomi_ba_fixed.png" alt="直美 ビフォーアフター" style="width:100%;border-radius:4px;">
       <p style="font-size:14px;color:#888;margin-top:16px;font-weight:300;">私もここから変わりました。</p>
     </div>
@@ -1070,7 +1095,7 @@
 
     <!-- Trinity Diagram (image + labels) -->
     <div class="trinity-diagram">
-      <img src="img/trinity.png" alt="美顔ヨガ・エステ・メンタルケアの三位一体" style="width:100%;">
+      <img src="img/trinity.png" alt="美顔ヨガ・メンタルケア・エステの三位一体" style="width:100%;">
       <div class="trinity-labels">
         <div class="trinity-label trinity-label-top">
           <span class="trinity-label-ja">美顔ヨガ</span>
@@ -1078,12 +1103,12 @@
         </div>
         <div class="trinity-label-row">
           <div class="trinity-label">
-            <span class="trinity-label-ja">エステ</span>
-            <span class="trinity-label-en">Esthetics</span>
-          </div>
-          <div class="trinity-label">
             <span class="trinity-label-ja">メンタル</span>
             <span class="trinity-label-en">Mental Care</span>
+          </div>
+          <div class="trinity-label">
+            <span class="trinity-label-ja">エステ</span>
+            <span class="trinity-label-en">Esthetics</span>
           </div>
         </div>
       </div>
@@ -1099,17 +1124,17 @@
         </div>
       </div>
       <div class="approach-detail">
-        <div class="detail-img"><img src="img/approach_esthe.png" alt="エステケア" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
-        <div>
-          <h3>エステケア</h3>
-          <p>透明ほっぺハーブピーリングなど、プロの技術でお肌のキメを整え、内側から輝く艶肌へ。</p>
-        </div>
-      </div>
-      <div class="approach-detail">
         <div class="detail-img"><img src="img/approach_mental.png" alt="メンタルケア" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
         <div>
           <h3>メンタルケア</h3>
           <p>外見が変わると、心も変わる。自分を好きになるマインドを育て、笑顔で過ごせる毎日をつくります。</p>
+        </div>
+      </div>
+      <div class="approach-detail">
+        <div class="detail-img"><img src="img/approach_esthe.png" alt="エステケア" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
+        <div>
+          <h3>エステケア</h3>
+          <p>透明ほっぺハーブピーリングなど、プロの技術でお肌のキメを整え、内側から輝く艶肌へ。</p>
         </div>
       </div>
     </div>
@@ -1120,7 +1145,7 @@
     <div class="course-inner">
       <p class="label">Course</p>
       <div class="thin-line"></div>
-      <h2>顔ヨガ・エステ 継続3ヶ月コース</h2>
+      <h2>ツヤホッペ美顔ヨガ3ヶ月コース</h2>
 
       <div class="course-items">
         <div class="course-row">
@@ -1143,7 +1168,7 @@
         <p class="note">体験レッスン当日のお申し込みで適用</p>
       </div>
 
-      <a href="#cta" class="course-cta">まずは無料体験レッスンへ</a>
+      <a href="#cta" class="course-cta">まずは体験レッスンへ</a>
     </div>
   </section>
 
@@ -1155,7 +1180,7 @@
       <h2>講師紹介</h2>
 
       <div class="instructor-photo">
-        <img src="img/naomi_photo_02.jpg" alt="角谷直美 プロフィール" style="width:100%;height:100%;object-fit:cover;">
+        <img src="img/naomi_photo_02.jpg" alt="角谷直美 プロフィール" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
       </div>
 
       <p class="instructor-name">角谷 直美</p>
@@ -1336,7 +1361,7 @@
   <!-- CTA -->
   <section class="cta" id="cta">
     <p class="label" style="color: rgba(255,255,255,0.7);">Trial Lesson</p>
-    <h2>まずは無料体験レッスンから。</h2>
+    <h2>まずは体験レッスンから。</h2>
     <p>
       オンラインで気軽にご参加いただけます。<br>
       あなたの笑顔が変わる第一歩を、一緒に。
@@ -1356,7 +1381,7 @@
   <!-- LINE Float -->
   <a href="https://lin.ee/rhMyvGa" class="line-float">
     <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-    無料体験を申し込む
+    体験レッスンを申し込む
   </a>
 
 </body>
