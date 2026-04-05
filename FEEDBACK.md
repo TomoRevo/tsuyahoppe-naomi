@@ -191,3 +191,36 @@
   - index.html: ヒーローimage object-position:center 20%、モバイル高さ50vh→75vh、講師写真object-position:center top、ダイアグラムラベル入替、アプローチ解説順入替、ファーストビュー・meta description・alt属性の順番統一、.label font-size 16px→44px、font-weight全体1段階上げ（300→400、400→500）、Google Fontsにweight追加、My Story h2追加、navにbackdrop-filter:blur(20px)・hover背景・間隔拡大、コース名全置換、CTA文言全統一
   - tokushoho.html: コース名2箇所置換、ヘッダー順番統一
 - **ステータス**: 反映済み
+
+---
+
+## 2026-04-05 [CCO] → index.html / tokushoho.html 最終デザインチェック
+
+### 16. CEOフィードバック反映後の最終チェック（7観点）
+
+- **チェック観点**: (1)写真の収まり (2)順番の一貫性 (3)フォントサイズ・太さ (4)ハンバーガーメニュー (5)文言の統一 (6)全体のトンマナ (7)tokushoho.htmlとの統一
+- **結果**: 全7観点OK。CEOの4カテゴリのフィードバックが全て正確に反映されている
+- **詳細**:
+  - 写真: ヒーロー `object-position:center 20%`、講師 `object-position:center top` -- 適切
+  - 順番: 全箇所で「美顔ヨガ×メンタルケア×エステ」に統一済み（meta, hero, trinity, approach, tokushoho header）
+  - フォント: .label 44px（元16pxの2.75倍）、font-weight全体1段階アップ済み。50-60代の視認性は十分
+  - ハンバーガー: backdrop-filter:blur(20px)、font-size:16px/weight:500、hover背景あり。チープ感なし
+  - 文言: 「無料体験」ゼロ件。全CTA「体験レッスン」で統一
+  - トンマナ: 薄ピンク(#fdf8f6) + ピンク(#c4788a) + 赤(#c94060) + ゴールド(#d4a97a) + Dancing Script -- 一貫
+  - tokushoho.html: コース名・価格・順番・フォント・カラーすべて一致
+
+### CCOチェックリスト結果（CLAUDE.md準拠）
+
+- [x] 3秒テスト: ヒーロー写真+コピーで「誰の・何のサイトか」即座にわかる
+- [x] 声テスト: 直美さんの実体験に基づくコピーが響く
+- [x] 差し替えテスト: 固有の写真・エピソード・BA画像により他者への流用不可
+- [x] 装飾テスト: 装飾を外しても情報構造が保たれている
+- [x] 写真テスト: ヒーロー、BA、講師、生徒BA×3 -- 十分
+- [x] 余白テスト: セクション間100px（モバイル70px）の意図的な余白あり
+- [x] テンプレテスト: 構成に固有性がある
+
+### CCO最終判定
+
+**OK（デザインチェック合格）** -- 条件なし。デプロイ可能な状態
+
+- **ステータス**: 完了
