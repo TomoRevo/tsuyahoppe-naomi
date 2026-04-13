@@ -267,19 +267,17 @@
     }
 
     .empathy-card {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 20px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
       background: #fff;
       border-radius: 6px;
       overflow: hidden;
-      text-align: left;
+      text-align: center;
     }
 
     .empathy-card .card-img {
-      width: 140px;
-      height: 100px;
+      width: 100%;
+      height: 400px;
       object-fit: cover;
       display: block;
     }
@@ -287,7 +285,7 @@
     /* (placeholder-img removed — images now in place) */
 
     .empathy-card .card-text {
-      padding: 16px 20px 16px 0;
+      padding: 16px 20px;
       font-size: 16px;
       color: #666;
       font-weight: 400;
@@ -406,30 +404,30 @@
     }
 
     .approach-detail {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 24px;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
     }
 
     .approach-detail .detail-img {
-      width: 180px;
-      height: 130px;
+      width: 100%;
+      height: 520px;
       background: #f0dde5;
       border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: #c4788a;
-      opacity: 0.6;
+      overflow: hidden;
     }
 
     .approach-detail h3 {
-      font-size: 16px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
       font-weight: 500;
-      color: #555;
-      margin-bottom: 6px;
+      color: #c4788a;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0c0cc;
+      display: inline-block;
     }
 
     .approach-detail p {
@@ -602,7 +600,7 @@
     }
 
     .instructor-bio {
-      text-align: left;
+      text-align: center;
       max-width: 520px;
       margin: 0 auto;
     }
@@ -892,14 +890,8 @@
       .empathy { padding: 70px 20px 60px; }
       .empathy h2 { font-size: 19px; }
 
-      .empathy-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
       .empathy-card .card-img {
-        width: 100%;
-        height: 120px;
+        height: 320px;
       }
 
       .empathy-card .card-text {
@@ -914,18 +906,9 @@
       /* Approach */
       .approach { padding: 70px 20px; }
 
-      .approach-detail {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
       .approach-detail .detail-img {
-        width: 100%;
-        height: 160px;
+        height: 400px;
       }
-
-      .approach-detail h3 { text-align: center; }
-      .approach-detail p { text-align: center; }
 
       /* Course */
       .course { padding: 70px 20px; }
@@ -1136,23 +1119,23 @@
 
     <div class="empathy-cards">
       <div class="empathy-card fade-in">
-        <img class="card-img" src="img/empathy_01.png" alt="鏡を見る女性の手元">
+        <img class="card-img" src="img/worries/1.png" alt="鏡を見る女性の手元">
         <p class="card-text">朝起きて鏡を見ると、頬のたるみが気になる</p>
       </div>
       <div class="empathy-card fade-in">
-        <img class="card-img" src="img/empathy_02.png" alt="顔を隠す女性">
+        <img class="card-img" src="img/worries/2.png" alt="顔を隠す女性">
         <p class="card-text">ほうれい線が深くなって、写真を撮りたくない</p>
       </div>
       <div class="empathy-card fade-in">
-        <img class="card-img" src="img/empathy_03.png" alt="窓辺で外を見つめる女性">
+        <img class="card-img" src="img/worries/3.png" alt="窓辺で外を見つめる女性">
         <p class="card-text">「昔はこうじゃなかった」とつい思ってしまう</p>
       </div>
       <div class="empathy-card fade-in">
-        <img class="card-img" src="img/empathy_04.png" alt="横顔でうつむく女性">
+        <img class="card-img" src="img/worries/4.png" alt="横顔でうつむく女性">
         <p class="card-text">年齢を聞かれるのが、なんだか恥ずかしい</p>
       </div>
       <div class="empathy-card fade-in">
-        <img class="card-img" src="img/empathy_05.png" alt="スキンケア製品">
+        <img class="card-img" src="img/worries/5.png" alt="スキンケア製品">
         <p class="card-text">高い化粧品を使っても、変化を感じない</p>
       </div>
     </div>
@@ -1188,45 +1171,29 @@
     <div class="thin-line fade-in"></div>
     <h2 class="fade-in">お顔と心と体は、三位一体。</h2>
 
-    <!-- Trinity Diagram (image + labels) -->
+    <!-- Trinity Diagram (image) -->
     <div class="trinity-diagram">
-      <img src="img/trinity.png" alt="美顔ヨガ・メンタルケア・エステの三位一体" style="width:100%;">
-      <div class="trinity-labels">
-        <div class="trinity-label trinity-label-top trinity-fade delay-1">
-          <span class="trinity-label-ja">美顔ヨガ</span>
-          <span class="trinity-label-en">Face Yoga</span>
-        </div>
-        <div class="trinity-label-row">
-          <div class="trinity-label trinity-fade delay-2">
-            <span class="trinity-label-ja">メンタル</span>
-            <span class="trinity-label-en">Mental Care</span>
-          </div>
-          <div class="trinity-label trinity-fade delay-3">
-            <span class="trinity-label-ja">エステ</span>
-            <span class="trinity-label-en">Esthetics</span>
-          </div>
-        </div>
-      </div>
+      <img src="img/trinity-connection.png" alt="美顔ヨガ・メンタルケア・エステの三位一体" style="width:100%;">
     </div>
 
     <!-- Detail items with images -->
     <div class="approach-details">
       <div class="approach-detail fade-in">
-        <div class="detail-img"><img src="img/approach_yoga.png" alt="美顔ヨガ" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
+        <div class="detail-img"><img src="img/approach/1.png" alt="美顔ヨガ" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
         <div>
           <h3>美顔ヨガ</h3>
           <p>表情筋を正しい順序でトレーニング。たるみ・ほうれい線にアプローチし、リフトアップした若々しい表情へ。</p>
         </div>
       </div>
       <div class="approach-detail fade-in">
-        <div class="detail-img"><img src="img/approach_mental.png" alt="メンタルケア" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
+        <div class="detail-img"><img src="img/approach/2.png" alt="メンタルケア" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
         <div>
           <h3>メンタルケア</h3>
           <p>外見が変わると、心も変わる。自分を好きになるマインドを育て、笑顔で過ごせる毎日をつくります。</p>
         </div>
       </div>
       <div class="approach-detail fade-in">
-        <div class="detail-img"><img src="img/approach_esthe.png" alt="エステケア" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
+        <div class="detail-img"><img src="img/approach/3.png" alt="エステケア" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"></div>
         <div>
           <h3>エステケア</h3>
           <p>透明ほっぺハーブピーリングなど、プロの技術でお肌のキメを整え、内側から輝く艶肌へ。</p>
