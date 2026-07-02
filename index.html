@@ -541,6 +541,66 @@
 
     .course-cta:hover { background: #b36a7c; }
 
+    /* ── Other Menu (parallel service card) ── */
+    .othermenu {
+      background: #fdf8f6;
+      padding: 0 40px 90px;
+    }
+
+    .othermenu-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .othermenu-card {
+      background: #fff;
+      border: 1px solid #f0e0e6;
+      border-radius: 8px;
+      padding: 36px 34px;
+      text-align: center;
+    }
+
+    .othermenu-card .om-label {
+      font-family: 'Dancing Script', cursive;
+      font-size: 26px;
+      color: #c4a06a;
+      margin-bottom: 6px;
+    }
+
+    .othermenu-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .othermenu-card p {
+      font-size: 14px;
+      color: #888;
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .othermenu-card .om-cta {
+      display: inline-block;
+      padding: 12px 34px;
+      background: #fff;
+      color: #c4788a;
+      border: 1px solid #c4788a;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .othermenu-card .om-cta:hover {
+      background: #fbeef2;
+    }
+
     /* ── Instructor (vertical layout with heading) ── */
     .instructor {
       padding: 100px 40px;
@@ -913,6 +973,10 @@
       /* Course */
       .course { padding: 70px 20px; }
 
+      /* Other Menu */
+      .othermenu { padding: 0 20px 70px; }
+      .othermenu-card { padding: 30px 24px; }
+
       .course-row {
         flex-direction: column;
         gap: 4px;
@@ -1092,6 +1156,7 @@
       <li><a href="#voice">お客様の声</a></li>
       <li><a href="#faq">よくある質問</a></li>
       <li><a href="#cta">体験レッスン</a></li>
+      <li><a href="venus.html">愛されヴィーナス塾</a></li>
     </ul>
   </nav>
 
@@ -1231,6 +1296,22 @@
       </div>
 
       <a href="#cta" class="course-cta">まずは体験レッスンへ</a>
+    </div>
+  </section>
+
+  <!-- Other Menu (parallel service) -->
+  <section class="othermenu">
+    <div class="othermenu-inner">
+      <div class="othermenu-card fade-in">
+        <p class="om-label">Another Menu</p>
+        <h3>愛されヴィーナス塾</h3>
+        <p>
+          もう一つのメニューとして、オンラインでじっくり学ぶ<br>
+          「愛されヴィーナス塾」もご用意しています。<br>
+          一生使えるセルフ整形メソッドを、半年・1年かけて身につけるコースです。
+        </p>
+        <a href="venus.html" class="om-cta">愛されヴィーナス塾を見る</a>
+      </div>
     </div>
   </section>
 

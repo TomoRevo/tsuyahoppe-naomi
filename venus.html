@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow">
+  <title>愛されヴィーナス塾 | 角谷直美</title>
+  <meta name="description" content="オンラインで学ぶ、一生使えるセルフ整形メソッド。愛されヴィーナス塾 認定講師 角谷直美による半年・1年コース。お顔と心を整え、愛されながら選ばれる女性へ。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      color: #444;
+      line-height: 1.8;
+      background-color: #fdf8f6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #c4788a;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    /* ── Hamburger ── */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 1100;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: #888;
+      border-radius: 1px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); background: #c4788a; }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); background: #c4788a; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100vh;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: -4px 0 30px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(100%);
+      transition: transform 0.35s ease;
+      z-index: 1050;
+    }
+
+    nav.open { transform: translateX(0); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+      width: 100%;
+      padding: 0 24px;
+    }
+
+    nav a {
+      display: block;
+      text-decoration: none;
+      color: #555;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 16px 24px;
+      transition: all 0.3s;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      color: #c4788a;
+      background: rgba(196,120,138,0.08);
+    }
+
+    nav::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      right: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e0c0cc, transparent);
+      opacity: 0;
+      transition: opacity 0.4s 0.2s;
+    }
+
+    nav.open::before { opacity: 1; }
+
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(2px);
+      z-index: 1040;
+    }
+
+    .nav-overlay.open { display: block; }
+
+    /* ── Hero ── */
+    .hero {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 88vh;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      background: #f0dde5;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 60px 60px 50px;
+    }
+
+    .hero-text .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      color: #c4788a;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #333;
+      margin-bottom: 24px;
+    }
+
+    .hero-text h1 em {
+      font-style: normal;
+      font-weight: 500;
+      color: #c94060;
+    }
+
+    .hero-text .lead {
+      color: #888;
+      font-size: 16px;
+      line-height: 2.2;
+      font-weight: 400;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      width: fit-content;
+      padding: 14px 36px;
+      background: #c4788a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .hero-cta:hover { background: #b36a7c; }
+
+    /* ── Accent Red ── */
+    .accent-red { color: #c94060; }
+
+    /* ── Shared ── */
+    .thin-line {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, #d4a97a, #e0c090);
+      margin: 0 auto 24px;
+    }
+
+    .label {
+      font-family: 'Dancing Script', cursive;
+      font-size: 44px;
+      color: #c4788a;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    /* ── Intro (What is Venus) ── */
+    .intro {
+      padding: 120px 40px 80px;
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: #444;
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      color: #777;
+      line-height: 2.2;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .intro strong {
+      color: #c4788a;
+      font-weight: 500;
+    }
+
+    /* ── For Whom ── */
+    .forwhom {
+      padding: 100px 40px;
+      background: #f5e6ef;
+    }
+
+    .forwhom-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .forwhom h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .forwhom-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .forwhom-item {
+      background: #fff;
+      border-radius: 6px;
+      padding: 20px 26px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.9;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .forwhom-item .check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #c4788a;
+      color: #fff;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    /* ── Program ── */
+    .program {
+      padding: 100px 40px;
+      max-width: 860px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .program h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .program .program-lead {
+      font-size: 15px;
+      color: #888;
+      line-height: 2.1;
+      margin-bottom: 56px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      text-align: left;
+    }
+
+    .pillar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 32px 34px;
+      box-shadow: 0 2px 14px rgba(196,120,138,0.06);
+    }
+
+    .pillar h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: #c4788a;
+      letter-spacing: 1px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0c0cc;
+      display: inline-block;
+      align-self: flex-start;
+    }
+
+    .pillar p {
+      font-size: 15px;
+      color: #888;
+      line-height: 2;
+      font-weight: 400;
+    }
+
+    /* ── Course / Pricing ── */
+    .courses {
+      padding: 100px 40px;
+      background: #fff;
+    }
+
+    .courses-inner {
+      max-width: 840px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .courses h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .courses .courses-lead {
+      font-size: 15px;
+      color: #888;
+      line-height: 2;
+      margin-bottom: 50px;
+    }
+
+    .course-cards {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .course-card {
+      flex: 1 1 320px;
+      max-width: 380px;
+      background: #fdf8f6;
+      border: 1px solid #f0e0e6;
+      border-radius: 8px;
+      padding: 40px 34px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-card.featured {
+      border: 1px solid #c4788a;
+      box-shadow: 0 6px 24px rgba(196,120,138,0.12);
+      position: relative;
+    }
+
+    .course-card .card-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #c4788a;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 5px 18px;
+      border-radius: 20px;
+    }
+
+    .course-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    .course-card .card-sub {
+      font-size: 13px;
+      color: #a08090;
+      margin-bottom: 24px;
+    }
+
+    .course-card .card-price {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: #c4788a;
+      margin-bottom: 4px;
+    }
+
+    .course-card .card-price small {
+      font-size: 14px;
+      font-weight: 400;
+      color: #999;
+    }
+
+    .course-card .card-price-note {
+      font-size: 12px;
+      color: #bbb;
+      margin-bottom: 26px;
+    }
+
+    .course-card .card-spec {
+      list-style: none;
+      text-align: left;
+      margin: 0 auto 30px;
+      display: inline-block;
+    }
+
+    .course-card .card-spec li {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      padding: 9px 0 9px 22px;
+      position: relative;
+      border-bottom: 1px solid #f0e8e4;
+    }
+
+    .course-card .card-spec li::before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 17px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d4a97a;
+    }
+
+    .course-card .card-cta {
+      margin-top: auto;
+      display: inline-block;
+      padding: 13px 34px;
+      background: #c4788a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .course-card .card-cta:hover { background: #b36a7c; }
+
+    .course-card.plain .card-cta {
+      background: #fff;
+      color: #c4788a;
+      border: 1px solid #c4788a;
+    }
+
+    .course-card.plain .card-cta:hover {
+      background: #fbeef2;
+    }
+
+    .courses-note {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 34px;
+      line-height: 1.9;
+    }
+
+    /* ── Instructor / Brand ── */
+    .instructor {
+      padding: 100px 40px;
+      background: #fdf8f6;
+    }
+
+    .instructor-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .instructor h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .instructor-photo {
+      width: 280px;
+      height: 290px;
+      margin: 0 auto 30px;
+      background: #e8d5df;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .instructor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 70%;
+    }
+
+    .instructor-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: #444;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .instructor .badge {
+      display: inline-block;
+      font-size: 11px;
+      color: #a06070;
+      border: 1px solid #e0c0cc;
+      padding: 4px 14px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .instructor-bio {
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .instructor-bio p {
+      color: #777;
+      font-size: 16px;
+      line-height: 2.1;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .instructor-bio strong {
+      color: #c4788a;
+      font-weight: 500;
+    }
+
+    .brand-note {
+      max-width: 560px;
+      margin: 40px auto 0;
+      padding: 24px 28px;
+      background: #fff;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #999;
+      line-height: 2;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      background: #c4788a;
+      color: #fff;
+      text-align: center;
+      padding: 90px 40px;
+    }
+
+    .cta h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      font-size: 14px;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      line-height: 2;
+    }
+
+    .cta .btn {
+      display: inline-block;
+      padding: 16px 52px;
+      background: #fff;
+      color: #c4788a;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: opacity 0.3s;
+    }
+
+    .cta .btn:hover { opacity: 0.85; }
+
+    .cta .btn-note {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    /* ── LINE Float ── */
+    .line-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #06C755;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 2px 12px rgba(6,199,85,0.3);
+      transition: all 0.3s;
+    }
+
+    .line-float:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(6,199,85,0.35);
+    }
+
+    .line-float svg { width: 20px; height: 20px; fill: #fff; }
+
+    /* ── Footer ── */
+    footer {
+      background: #3a3035;
+      color: #777;
+      padding: 36px 20px;
+      text-align: center;
+      font-size: 11px;
+    }
+
+    footer a {
+      color: #b89aa4;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    footer .copy { margin-top: 12px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .header-main { padding: 14px 20px; }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        min-height: auto;
+      }
+
+      .hero-image { height: 62vh; }
+
+      .hero-text {
+        padding: 44px 28px;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-text h1 { font-size: 24px; }
+      .hero-cta { margin: 0 auto; }
+
+      .intro { padding: 70px 20px 60px; }
+      .intro h2 { font-size: 20px; }
+
+      .forwhom { padding: 70px 20px; }
+
+      .program { padding: 70px 20px; }
+      .pillar { padding: 26px 24px; }
+
+      .courses { padding: 70px 20px; }
+      .course-card { padding: 34px 26px; }
+
+      .instructor { padding: 70px 20px; }
+      .instructor-photo { width: 220px; height: 230px; }
+      .instructor-bio { text-align: center; }
+
+      .cta { padding: 70px 28px; }
+      .cta h2 { font-size: 20px; }
+
+      .line-float {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 18px;
+        font-size: 12px;
+      }
+    }
+
+    /* ── Scroll Animations ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .slide-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .hero-stagger {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .hero-stagger.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .label-bounce {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .label-bounce.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @keyframes gentle-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.3); }
+      50% { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+    }
+
+    .cta .btn.visible {
+      animation: gentle-pulse 3s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in,
+      .slide-left,
+      .hero-stagger,
+      .label-bounce {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .cta .btn.visible {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-main">
+      <a href="index.html" class="logo">艶ほっぺ 美顔ヨガ</a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="nav">
+    <ul>
+      <li><a href="#intro">ヴィーナス塾とは</a></li>
+      <li><a href="#forwhom">こんな方へ</a></li>
+      <li><a href="#program">プログラム</a></li>
+      <li><a href="#courses">コース・料金</a></li>
+      <li><a href="#instructor">講師</a></li>
+      <li><a href="#cta">お問い合わせ</a></li>
+      <li><a href="index.html">美顔ヨガ3ヶ月コース</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="img/naomi_pfoto_fixed.png" alt="角谷直美">
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow hero-stagger" style="transition-delay:0.1s;">愛されヴィーナス塾</p>
+      <h1 class="hero-stagger" style="transition-delay:0.25s;">一生使える、<br><em>セルフ整形</em>という美容法を。</h1>
+      <p class="lead hero-stagger" style="transition-delay:0.5s;">
+        お金も機械も使わない。<br>
+        あなたの手だけで、お顔と心を整える。<br>
+        愛されながら選ばれる女性へ、オンラインで。
+      </p>
+      <a href="#cta" class="hero-cta hero-stagger" style="transition-delay:0.75s;">体験・お問い合わせ</a>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="intro" id="intro">
+    <p class="label label-bounce">Venus</p>
+    <div class="thin-line fade-in"></div>
+    <h2 class="fade-in">愛されヴィーナス塾とは。</h2>
+    <p class="fade-in">
+      愛されヴィーナス塾は、上半身のストレッチで巡りを整え、表情筋をやさしくほぐし、鍛える<strong>セルフ整形メソッド</strong>を学ぶオンライン講座です。
+    </p>
+    <p class="fade-in">
+      ただの顔の体操ではありません。たるみにくい土台をつくり、自分でメンテナンスできる力を身につけ、鏡を見るのが楽しくなる毎日へ。<strong>お顔と心はセット</strong>——外見が変わると、自信が生まれ、その自信が人生の選択まで変えていきます。
+    </p>
+    <p class="fade-in">
+      5年後、10年後。<br>
+      「何もしてこなかった未来」と「今、始めた未来」。<br>
+      どちらの自分でいたいですか。
+    </p>
+  </section>
+
+  <!-- For Whom -->
+  <section class="forwhom" id="forwhom">
+    <div class="forwhom-inner">
+      <p class="label label-bounce">For You</p>
+      <div class="thin-line fade-in"></div>
+      <h2 class="fade-in">こんな方へ。</h2>
+      <div class="forwhom-list">
+        <div class="forwhom-item fade-in"><span class="check">&#10003;</span>鏡を見るたびに「老け」を感じて、自分にがっかりしてしまう</div>
+        <div class="forwhom-item fade-in"><span class="check">&#10003;</span>美容医療には頼らず、自分の手でキレイを続けていきたい</div>
+        <div class="forwhom-item fade-in"><span class="check">&#10003;</span>お顔だけでなく、心まで前向きに整えたい</div>
+        <div class="forwhom-item fade-in"><span class="check">&#10003;</span>じっくり時間をかけて、一生モノの美容法を身につけたい</div>
+        <div class="forwhom-item fade-in"><span class="check">&#10003;</span>これからの人生を、もっと自分らしく輝かせたい</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program -->
+  <section class="program" id="program">
+    <p class="label label-bounce">Program</p>
+    <div class="thin-line fade-in"></div>
+    <h2 class="fade-in">プログラム内容。</h2>
+    <p class="program-lead fade-in">
+      オンラインで、月2回のグループレッスン。<br>
+      半年で全12回、1年で全24回。あなたのペースで、基礎から応用まで丁寧に積み上げます。
+    </p>
+
+    <div class="pillars">
+      <div class="pillar fade-in">
+        <h3>お金をかけずに、綺麗になる</h3>
+        <p>一度覚えたら、一生自分でメンテナンスできる。5年先も10年先もずっと美顔をキープできるメソッドです。機械も電源も資金も不要。場所を選ばず、どこでも実践できます。</p>
+      </div>
+      <div class="pillar fade-in">
+        <h3>あなたの悩みに合わせたレクチャー</h3>
+        <p>決まったポーズだけではありません。あなたが気になる部分に特化した応用ポーズもしっかりお伝えするので、変化を早く実感していただけます。</p>
+      </div>
+      <div class="pillar fade-in">
+        <h3>リフトアップだけじゃない、上半身から整える</h3>
+        <p>お顔のたるみの大きな原因である首肩こりに、上半身からアプローチ。慢性的な首肩こりもやわらぎ、美しい姿勢を保ちやすくなります。</p>
+      </div>
+      <div class="pillar fade-in">
+        <h3>愛されマインドが身につく</h3>
+        <p>どんなに美容に気を使っても、心の状態が整っていないとお顔は変化しきれません。お顔がきれいになると自然と自信もつき、笑顔が増え、自分のことがもっと好きになります。見た目も心も、欲張りに綺麗になりましょう。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses / Pricing -->
+  <section class="courses" id="courses">
+    <div class="courses-inner">
+      <p class="label label-bounce">Course</p>
+      <div class="thin-line fade-in"></div>
+      <h2 class="fade-in">2つのコース。</h2>
+      <p class="courses-lead fade-in">どちらもオンライン・月2回。ご自身のペースに合わせてお選びいただけます。</p>
+
+      <div class="course-cards">
+        <div class="course-card plain fade-in">
+          <h3>半年コース</h3>
+          <p class="card-sub">じっくり基礎から身につける6ヶ月</p>
+          <p class="card-price">498,000<small>円（税込）</small></p>
+          <p class="card-price-note">一括／分割のご相談も承ります</p>
+          <ul class="card-spec">
+            <li>期間：6ヶ月間（全12回）</li>
+            <li>頻度：月2回のオンライン指導</li>
+            <li>形式：ウェブによるグループレッスン</li>
+            <li>全国どこからでも参加可能</li>
+          </ul>
+          <a href="#cta" class="card-cta">このコースを相談する</a>
+        </div>
+
+        <div class="course-card featured fade-in">
+          <span class="card-badge">じっくり定着</span>
+          <h3>1年コース</h3>
+          <p class="card-sub">応用まで極める、一生モノの1年</p>
+          <p class="card-price">898,000<small>円（税込）</small></p>
+          <p class="card-price-note">一括／分割のご相談も承ります</p>
+          <ul class="card-spec">
+            <li>期間：12ヶ月間（全24回）</li>
+            <li>頻度：月2回のオンライン指導</li>
+            <li>形式：ウェブによるグループレッスン</li>
+            <li>全国どこからでも参加可能</li>
+          </ul>
+          <a href="#cta" class="card-cta">このコースを相談する</a>
+        </div>
+      </div>
+
+      <p class="courses-note fade-in">
+        表示価格はすべて税込です。お支払い方法・開講スケジュール等の詳細は、お問い合わせ時にご案内いたします。<br>
+        <a href="tokushoho.html" style="color:#c4788a;text-decoration:underline;">特定商取引法に基づく表記はこちら</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Instructor / Brand -->
+  <section class="instructor" id="instructor">
+    <div class="instructor-inner">
+      <p class="label label-bounce">Instructor</p>
+      <div class="thin-line fade-in"></div>
+      <h2 class="fade-in">講師紹介</h2>
+
+      <div class="instructor-photo fade-in">
+        <img src="img/naomi_photo_02.jpg" alt="角谷直美 プロフィール">
+      </div>
+
+      <p class="instructor-name">角谷 直美</p>
+      <span class="badge">愛されヴィーナス塾 認定講師</span>
+
+      <div class="instructor-bio">
+        <p>
+          58歳、4人の子どもの母。<br>
+          離婚、介護、大切な人との別れ。<br>
+          いろいろな経験をしてきました。
+        </p>
+        <p>
+          56歳で、この美顔ヨガに出会いました。<br>
+          「このまま老け続けるのは絶対いやだ」<br>
+          その想いで事務の仕事を辞め、<br>
+          覚悟を決めて講師の道へ進みました。
+        </p>
+        <p>
+          今では<strong>延べ60人以上の方</strong>の<br>
+          美顔づくりに関わっています。
+        </p>
+        <p>
+          私が変われたからこそ、伝えたい。<br>
+          <strong class="accent-red">「あなたは、まだまだ可愛くなれる」</strong>
+        </p>
+      </div>
+
+      <div class="brand-note fade-in">
+        愛されヴィーナス塾は、上半身から整えるセルフ整形メソッドを学ぶオンライン講座です。角谷直美は本メソッドの認定講師として、レッスンを提供しています。
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <p class="label label-bounce" style="color: rgba(255,255,255,0.9);">Contact</p>
+    <h2 class="fade-in">まずは、お気軽にご相談ください。</h2>
+    <p class="fade-in">
+      コースの内容や進め方など、気になることは何でも。<br>
+      あなたのペースに合わせて、ご案内いたします。
+    </p>
+    <a href="https://lin.ee/rhMyvGa" class="btn fade-in">LINEで相談する</a>
+    <span class="btn-note">お友だち追加後「ヴィーナス塾希望」とメッセージください</span>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="index.html">トップページ</a>
+      <a href="tokushoho.html">特定商取引法に基づく表記</a>
+    </div>
+    <p class="copy">&copy; 2026 艶ほっぺ美顔ヨガ</p>
+  </footer>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    var hamburger = document.getElementById('hamburger');
+    var nav = document.getElementById('nav');
+    var overlay = document.getElementById('navOverlay');
+
+    function toggleMenu(open) {
+      hamburger.classList.toggle('open', open);
+      nav.classList.toggle('open', open);
+      overlay.classList.toggle('open', open);
+    }
+
+    hamburger.addEventListener('click', function() {
+      toggleMenu(!nav.classList.contains('open'));
+    });
+
+    overlay.addEventListener('click', function() { toggleMenu(false); });
+
+    nav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { toggleMenu(false); });
+    });
+  </script>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.fade-in, .slide-left, .hero-stagger, .label-bounce').forEach(function(el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+
+      setTimeout(function() {
+        document.querySelectorAll('.hero-stagger').forEach(function(el) {
+          el.classList.add('visible');
+        });
+      }, 300);
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.fade-in, .slide-left, .label-bounce, .cta .btn').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+  <!-- LINE Float -->
+  <a href="https://lin.ee/rhMyvGa" class="line-float">
+    <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    体験・お問い合わせ
+  </a>
+
+</body>
+</html>
